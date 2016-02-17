@@ -36,7 +36,7 @@ class Controlpanel extends CI_Controller {
 				'show' => $this->input->post('show'),
 				);
 			
-				$insert=$this->My_model->add_Config($data);
+				$insert=$this->My_model->add_config($data);
 				$insert="The book successfully Added ✔️✔✍️";
 				echo "$insert";
 		}
@@ -45,18 +45,24 @@ class Controlpanel extends CI_Controller {
 
 	public function slider()
 	{
-		$this->load->view('Admin/slider');
+		$slider=$this->My_model->show_slider();
+		$data['slider']=$slider;
+		$this->load->view('Admin/slider',$data);
 	}
 
 	//This is the footer
-	public function bottom_links()
+	public function footer()
 	{
-		$this->load->view('Admin/footer');
+		$footer=$this->My_model->bottom_link();
+		$data['footer']=$footer;
+		$this->load->view('Admin/footer',$data);
 	}
 
 	public function pages()
 	{
-		$this->load->view('Admin/pages');
+		$pages=$this->My_model->pages();
+		$data['pages']=$pages;
+		$this->load->view('Admin/pages',$data);
 	}
 	
 }

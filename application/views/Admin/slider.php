@@ -43,7 +43,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="<?php echo base_url("Home/index")?>" class="logo">
+        <a href="<?php echo base_url("Controlpanel/panel")?>" class="logo">
 
           <!-- mini logo for sidebar mini 50x50 pixels -->
 
@@ -106,7 +106,7 @@
 
               </li>
             <li class="treeview">
-              <a href="<?php echo site_url("Controlpanel/bottom_links")?>">
+              <a href="<?php echo site_url("Controlpanel/footer")?>">
                 <i class="fa fa-keyboard-o"style="font-size: 24px"></i> <span>&nbsp;&nbsp;Footer Links</span>
               </a>
 
@@ -144,13 +144,19 @@
       <div class="content-wrapper">
               <section class="content-header">
           <i class="fa fa-sliders" style="font-size:24px">&nbsp;&nbsp;Home Slider</i>
-             
+             <br>
+             <br>
+               <a href="" class="btn btn-primary">
+               Create Slider
+               </a>
          
         </section>
+        <br>
+             <br>
     <table class="table table-bordered">
     <thead>
       <tr>
-        <td>#</td>
+        <td>Number</td>
         <td>image</td>
         <td>Title</td>
         <td>Link</td>
@@ -159,81 +165,39 @@
       </tr>
     </thead>
     <tbody>
+    <?php 
+    foreach ($slider as $key => $row):?>
+    
           <tr>
-        <td>1</td>
+        <td>
+        <?php echo ++$key ?>
+        </td>
         <td style='width:150px'>
-          <img src="" style='width:150px;height:100px;'>
-        </td>
-        <td></td>
-        <td>link</td>
-        <td><span class='label label-success'>active</span></td>
-        <td>
-                    <a class="btn btn-primary" href="#"><span
-                                class="fa fa-edit"></span></a>
-
-                    <form method="post" action="#" style="display: inline;">
-                        <input type="hidden" name="_token" value="">
-                        <button class="btn btn-danger"><span class="fa fa-trash"></span></button>
-                    </form>
-                </td>
-      </tr>
-          <tr>
-        <td>12</td>
-        <td style='width:150px'><img src="" style='width:150px;height:100px;'></td>
-        <td>New One</td>
-        <td></td>
-        <td><span class='label label-success'>active</span></td>
-        <td>
-                    <a class="btn btn-primary" href=""><span
-                                class="fa fa-edit"></span></a>
-
-                    <form method="post" action="" style="display: inline;">
-                        <input type="hidden" name="_token" value="">
-                        <button class="btn btn-danger"><span class="fa fa-trash"></span></button>
-                    </form>
-                </td>
-      </tr>
-          <tr>
-        <td>13</td>
-        <td style='width:150px'><img src="" style='width:150px;height:100px;'></td>
-        <td>New Slider</td>
-        <td></td>
-        <td><span class='label label-success'>active</span></td>
-        <td>
-                    <a class="btn btn-primary" href="">
-                    <span class="fa fa-edit"></span>
-                                
-                                </a>
-
-                    <form method="post" action=" " style="display: inline;">
-                        <input type="hidden" name="_token" value="">
-                        <button class="btn btn-danger"><span class="fa fa-trash"></span></button>
-                    </form>
-                </td>
-      </tr>
-          <tr>
-        <td>14</td>
-        <td style='width:150px'>
-          <img src="" style='width:150px;height:100px;'>
-        </td>
-        <td>تجربة صورة</td>
-        <td></td>
-        <td>
-          <span class='label label-success'>active</span>
+         
+          <?php//echo $row->pictures ?>
         </td>
         <td>
-                    <a class="btn btn-primary" href=""><span
-                                class="fa fa-edit"></span></a>
-
-                    <form method="post" action="" style="display: inline;">
-                        <input type="hidden" name="_token" value="">
-                        <button class="btn btn-danger">
-                        <span class="fa fa-trash"></span>
-                        </button>
-                    </form>
-                </td>
+          <?php echo $row->title ?>
+        </td>
+        <td>
+          <?php echo $row->link ?>
+        </td>
+      
+        <td>
+        <?php if($row->status==1) :?>
+        <span class='label label-success'style="font-size: 15px">Active</span>
+      <?php else: ?>
+         <span class='label label-warning' style="font-size: 15px">Hidden</span>
+       <?php endif;?>
+        </td>
+          <td>
+              <a class="btn btn-primary" href=""><i class="fa fa-pencil-square-o"></i></a>
+              <a class="btn btn-danger"  href=""><i class="fa fa fa-trash"></i></a>
+            </td>
       </tr>
+         
         </tbody>
+        <?php endforeach;?>
   </table>
 
      

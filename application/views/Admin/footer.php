@@ -43,7 +43,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="<?php echo base_url("Home/index")?>" class="logo">
+        <a href="<?php echo base_url("Controlpanel/panel")?>" class="logo">
 
           <!-- mini logo for sidebar mini 50x50 pixels -->
 
@@ -70,17 +70,7 @@
       <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-          <!-- Sidebar user panel -->
-          <div class="user-panel">
-            <div class="pull-left image">
-              <!--<img src="<?php echo base_url('styles/dist/img/user2-160x160.jpg')?>" class="img-circle" alt="User Image">-->
-            </div>
-
-          </div>
-          <!-- search form -->
-
-          <!-- /.search form -->
-          <!-- sidebar menu: : style can be found in sidebar.less -->
+      
 
           <ul class="sidebar-menu">
            <!-- <li class="header">MAIN NAVIGATION</li>-->
@@ -107,17 +97,16 @@
                 <i class="fa fa-laptop"style="font-size: 24px"></i>
                 <span>&nbsp;&nbsp;App Configuration</span>
               </a>
-            
-   
+
             </li>
             <li class="treeview">
               <a href="<?php echo site_url("Controlpanel/slider")?>">
-                <i class="fa fa-sliders" style="font-size: 24px"></i> <span>&nbsp;&nbsp;Home Slider</span>
+                <i class="fa fa-sliders"style="font-size: 24px"></i> <span>&nbsp;&nbsp;Home Slider</span>
               </a>
 
               </li>
             <li class="treeview">
-              <a href="<?php echo site_url("Controlpanel/bottom_links")?>">
+              <a href="<?php echo site_url("Controlpanel/footer")?>">
                 <i class="fa fa-keyboard-o"style="font-size: 24px"></i> <span>&nbsp;&nbsp;Footer Links</span>
               </a>
 
@@ -148,100 +137,68 @@
             </li>
 
             <!--EndtDashboard-->
-
+         
       </aside>
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <i class="fa fa-sliders" style="font-size: 24px">&nbsp;&nbsp;Footer Links</i>
-
+              <section class="content-header">
+          <i class="fa fa-sliders" style="font-size:24px">&nbsp;&nbsp;Bottom Links</i>
+             <br>
+             <br>
+               <a href="" class="btn btn-primary">
+               Create Link
+               </a>
+         
         </section>
-
-        <!-- Main content -->
-
-<a href="">Create</a>
-  <!-- Table -->
- <table class="table table-bordered" bgcolor="#000000">
+        <br>
+             <br>
+    <table class="table table-bordered">
     <thead>
       <tr>
-        <td>#</td>
-        <td>image</td>
+        <td>Number</td>
         <td>Title</td>
-        <td>Link</td>
+        <td>Parent</td>
         <td>Status</td>
         <td>Actions</td>
       </tr>
     </thead>
     <tbody>
+    <?php
+      foreach ($footer as $key => $row) :?>
+        
+    
           <tr>
-        <td>1</td>
-        <td style='width:150px'><img src="http://www.nerdsarena.com/wow/uploads/slider/vsNp4g.png.png" style='width:150px;height:100px;'></td>
-        <td>New Slider</td>
-        <td></td>
-        <td><span class='label label-success'>active</span></td>
         <td>
-                    <a class="btn btn-primary" href="http://www.nerdsarena.com/wow/panel/slider/1/edit"><span
-                                class="fa fa-edit"></span></a>
-
-                    <form method="post" action=" http://www.nerdsarena.com/wow/panel/slider/1/delete" style="display: inline;">
-                        <input type="hidden" name="_token" value="j5Xm4PtqUcINm409wdyhEmRBQd9Liqg6oSNh9HAK">
-                        <button class="btn btn-danger"><span class="fa fa-trash"></span></button>
-                    </form>
-                </td>
-      </tr>
-          <tr>
-        <td>12</td>
-        <td style='width:150px'><img src="http://www.nerdsarena.com/wow/uploads/slider/2p08vKaslide-img1.jpg.jpg" style='width:150px;height:100px;'></td>
-        <td>New One</td>
-        <td></td>
-        <td><span class='label label-success'>active</span></td>
+        <?php echo ++$key ?>
+        </td>
+        <td style='width:150px'>
+        <?php echo $row->title ?>
+        </td>
         <td>
-                    <a class="btn btn-primary" href="http://www.nerdsarena.com/wow/panel/slider/12/edit"><span
-                                class="fa fa-edit"></span></a>
-
-                    <form method="post" action=" http://www.nerdsarena.com/wow/panel/slider/12/delete" style="display: inline;">
-                        <input type="hidden" name="_token" value="j5Xm4PtqUcINm409wdyhEmRBQd9Liqg6oSNh9HAK">
-                        <button class="btn btn-danger"><span class="fa fa-trash"></span></button>
-                    </form>
-                </td>
-      </tr>
-          <tr>
-        <td>13</td>
-        <td style='width:150px'><img src="http://www.nerdsarena.com/wow/uploads/slider/WV1fQvGslide-img2.jpg.jpg" style='width:150px;height:100px;'></td>
-        <td>New Slider</td>
-        <td></td>
-        <td><span class='label label-success'>active</span></td>
+        <?php echo $row->parent?>
+        </td>
+          <td>
+          <?php if($row->status==1):?>
+         <span class='label label-success'style="font-size: 15px">Active</span>
+       <?php else :?>
+         <span class='label label-warning' style="font-size: 15px">Hidden</span>
+            </td>
+          <?php endif;?> 
         <td>
-                    <a class="btn btn-primary" href="http://www.nerdsarena.com/wow/panel/slider/13/edit"><span
-                                class="fa fa-edit"></span></a>
 
-                    <form method="post" action=" http://www.nerdsarena.com/wow/panel/slider/13/delete" style="display: inline;">
-                        <input type="hidden" name="_token" value="j5Xm4PtqUcINm409wdyhEmRBQd9Liqg6oSNh9HAK">
-                        <button class="btn btn-danger"><span class="fa fa-trash"></span></button>
-                    </form>
-                </td>
-      </tr>
-          <tr>
-        <td>14</td>
-        <td style='width:150px'></td>
-        <td>تجربة صورة</td>
-        <td></td>
-        <td><span class='label label-success'>active</span></td>
-        <td>
-                    <a class="btn btn-primary" href="http://www.nerdsarena.com/wow/panel/slider/14/edit"><span
-                                class="fa fa-edit"></span></a>
+              <a class="btn btn-primary" href=""><i class="fa fa-pencil-square-o"></i></a>
+              <a class="btn btn-danger"  href=""><i class="fa fa fa-trash"></i></a>
 
-                    <form method="post" action=" http://www.nerdsarena.com/wow/panel/slider/14/delete" style="display: inline;">
-                        <input type="hidden" name="_token" value="j5Xm4PtqUcINm409wdyhEmRBQd9Liqg6oSNh9HAK">
-                        <button class="btn btn-danger"><span class="fa fa-trash"></span></button>
-                    </form>
-                </td>
+        </td>
+       
       </tr>
+
         </tbody>
+         <?php endforeach;?>
   </table>
-  <!--End Table>
+
+     
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
@@ -250,7 +207,16 @@
         <strong>Copyright &copy; 2014-2015 <a href="http://www.nerdsarena.com/"target="_blank">Kareem badawy</a>.</strong> All rights reserved.
       </footer>
 
-
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Create the tabs -->
+       
+        <!-- Tab panes -->
+      
+      </aside><!-- /.control-sidebar -->
+      <!-- Add the sidebar's background. This div must be placed
+           immediately after the control sidebar -->
+      <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
 
     <!-- jQuery 2.1.4 -->

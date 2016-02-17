@@ -43,7 +43,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="<?php echo base_url("Home/index")?>" class="logo">
+        <a href="<?php echo base_url("Controlpanel/panel")?>" class="logo">
 
           <!-- mini logo for sidebar mini 50x50 pixels -->
 
@@ -132,7 +132,7 @@
               </ul>-->
               </li>
             <li class="treeview">
-              <a href="<?php echo site_url("Controlpanel/bottom_links")?>">
+              <a href="<?php echo site_url("Controlpanel/footer")?>">
                 <i class="fa fa-keyboard-o"style="font-size: 24px"></i> <span>&nbsp;&nbsp;Footer Links</span>
               </a>
 

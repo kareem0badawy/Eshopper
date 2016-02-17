@@ -43,7 +43,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="<?php echo base_url("Home/index")?>" class="logo">
+        <a href="<?php echo base_url("Controlpanel/panel")?>" class="logo">
 
           <!-- mini logo for sidebar mini 50x50 pixels -->
 
@@ -95,7 +95,7 @@
 
             <li class="treeview">
               <a href="<?php echo site_url("Controlpanel/slider")?>">
-                <i class="fa fa-keyboard-o"style="font-size: 24px"></i> <span>&nbsp;&nbsp;Home Slider</span>
+                <i class="fa fa-sliders"style="font-size: 24px"></i> <span>&nbsp;&nbsp;Home Slider</span>
               </a>
               </li>
 

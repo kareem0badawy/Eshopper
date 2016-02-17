@@ -8,20 +8,33 @@ class My_model extends CI_Model
 		parent::__construct();
 	}
 
-	public function add_Config($data)
+	public function add_config($data)
 	{
 
 	$this->db->insert('config',$data);
 
-
 	}
-   public function show_Slider($data)
+   public function show_slider()
     {
-
-        $this->db->insert('config',$data);
+    	$this->db->select('id,title,link,pictures,status');
+    	$query=$this->db->get('slider');
+       return $query->result();
     }
 
+	public function bottom_link()
+	{
+		$this->db->select('id,title,parent,status');
+		$query=$this->db->get('bottomLinks');
+		return $query->result();
+	}
 
+	public function pages()
+	{
+		$this->db->select('id,titleEN,titleAR,link');
+		$query=$this->db->get('pages');
+		return $query->result();
+
+	}
 
 
 
