@@ -75,11 +75,7 @@
             <div class="pull-left image">
               <!--<img src="<?php echo base_url('styles/dist/img/user2-160x160.jpg')?>" class="img-circle" alt="User Image">-->
             </div>
-            <!--
-            <div class="pull-left info">
-              <p>Alexander Pierce</p>
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>-->
+
           </div>
           <!-- search form -->
 
@@ -112,34 +108,19 @@
                 <span>&nbsp;&nbsp;App Configuration</span>
               </a>
             
-             <!-- <ul class="treeview-menu">
-                <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-                <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-                <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-                <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-                <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-                <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
-              </ul>-->
+   
             </li>
             <li class="treeview">
               <a href="<?php echo site_url("Controlpanel/slider")?>">
-                <i class="fa fa-keyboard-o"style="font-size: 24px"></i> <span>&nbsp;&nbsp;Home Slider</span>
+                <i class="fa fa-sliders" style="font-size: 24px"></i> <span>&nbsp;&nbsp;Home Slider</span>
               </a>
-             <!-- <ul class="treeview-menu">
-                <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-                <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-                <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-              </ul>-->
+
               </li>
             <li class="treeview">
               <a href="<?php echo site_url("Controlpanel/bottom_links")?>">
                 <i class="fa fa-keyboard-o"style="font-size: 24px"></i> <span>&nbsp;&nbsp;Footer Links</span>
               </a>
 
-             <!-- <ul class="treeview-menu">
-                <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-                <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
-              </ul>-->
             </li>
            </li>
             <li class="treeview">
@@ -167,72 +148,100 @@
             </li>
 
             <!--EndtDashboard-->
-            <!--
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-folder"></i> <span>Examples</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-                <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-                <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-                <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-                <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-                <li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-                <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-                <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-share"></i> <span>Multilevel</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-                <li>
-                  <a href="#"><i class="fa fa-circle-o"></i> Level One <i class="fa fa-angle-left pull-right"></i></a>
-                  <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                    <li>
-                      <a href="#"><i class="fa fa-circle-o"></i> Level Two <i class="fa fa-angle-left pull-right"></i></a>
-                      <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-              </ul>
-            </li>
-            <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-            <li class="header">LABELS</li>
-            <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
-          </ul>
-        </section>
-        <!-- /.sidebar -->
+
       </aside>
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        <!-- Content Header (Page header) 
+        <!-- Content Header (Page header) -->
         <section class="content-header">
-          <h1>
-            Dashboard
-            <small>Control panel</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="<?php echo site_url("Home/index")?>"><i class="fa fa-home"></i> Home</a></li>
-            <li class="active">Dashboard</li>
-          </ol>
-        </section>-->
+          <i class="fa fa-sliders" style="font-size: 24px">&nbsp;&nbsp;Footer Links</i>
+
+        </section>
 
         <!-- Main content -->
-     
+
+<a href="">Create</a>
+  <!-- Table -->
+ <table class="table table-bordered" bgcolor="#000000">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>image</td>
+        <td>Title</td>
+        <td>Link</td>
+        <td>Status</td>
+        <td>Actions</td>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+        <td>1</td>
+        <td style='width:150px'><img src="http://www.nerdsarena.com/wow/uploads/slider/vsNp4g.png.png" style='width:150px;height:100px;'></td>
+        <td>New Slider</td>
+        <td></td>
+        <td><span class='label label-success'>active</span></td>
+        <td>
+                    <a class="btn btn-primary" href="http://www.nerdsarena.com/wow/panel/slider/1/edit"><span
+                                class="fa fa-edit"></span></a>
+
+                    <form method="post" action=" http://www.nerdsarena.com/wow/panel/slider/1/delete" style="display: inline;">
+                        <input type="hidden" name="_token" value="j5Xm4PtqUcINm409wdyhEmRBQd9Liqg6oSNh9HAK">
+                        <button class="btn btn-danger"><span class="fa fa-trash"></span></button>
+                    </form>
+                </td>
+      </tr>
+          <tr>
+        <td>12</td>
+        <td style='width:150px'><img src="http://www.nerdsarena.com/wow/uploads/slider/2p08vKaslide-img1.jpg.jpg" style='width:150px;height:100px;'></td>
+        <td>New One</td>
+        <td></td>
+        <td><span class='label label-success'>active</span></td>
+        <td>
+                    <a class="btn btn-primary" href="http://www.nerdsarena.com/wow/panel/slider/12/edit"><span
+                                class="fa fa-edit"></span></a>
+
+                    <form method="post" action=" http://www.nerdsarena.com/wow/panel/slider/12/delete" style="display: inline;">
+                        <input type="hidden" name="_token" value="j5Xm4PtqUcINm409wdyhEmRBQd9Liqg6oSNh9HAK">
+                        <button class="btn btn-danger"><span class="fa fa-trash"></span></button>
+                    </form>
+                </td>
+      </tr>
+          <tr>
+        <td>13</td>
+        <td style='width:150px'><img src="http://www.nerdsarena.com/wow/uploads/slider/WV1fQvGslide-img2.jpg.jpg" style='width:150px;height:100px;'></td>
+        <td>New Slider</td>
+        <td></td>
+        <td><span class='label label-success'>active</span></td>
+        <td>
+                    <a class="btn btn-primary" href="http://www.nerdsarena.com/wow/panel/slider/13/edit"><span
+                                class="fa fa-edit"></span></a>
+
+                    <form method="post" action=" http://www.nerdsarena.com/wow/panel/slider/13/delete" style="display: inline;">
+                        <input type="hidden" name="_token" value="j5Xm4PtqUcINm409wdyhEmRBQd9Liqg6oSNh9HAK">
+                        <button class="btn btn-danger"><span class="fa fa-trash"></span></button>
+                    </form>
+                </td>
+      </tr>
+          <tr>
+        <td>14</td>
+        <td style='width:150px'></td>
+        <td>تجربة صورة</td>
+        <td></td>
+        <td><span class='label label-success'>active</span></td>
+        <td>
+                    <a class="btn btn-primary" href="http://www.nerdsarena.com/wow/panel/slider/14/edit"><span
+                                class="fa fa-edit"></span></a>
+
+                    <form method="post" action=" http://www.nerdsarena.com/wow/panel/slider/14/delete" style="display: inline;">
+                        <input type="hidden" name="_token" value="j5Xm4PtqUcINm409wdyhEmRBQd9Liqg6oSNh9HAK">
+                        <button class="btn btn-danger"><span class="fa fa-trash"></span></button>
+                    </form>
+                </td>
+      </tr>
+        </tbody>
+  </table>
+  <!--End Table>
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
@@ -241,171 +250,7 @@
         <strong>Copyright &copy; 2014-2015 <a href="http://www.nerdsarena.com/"target="_blank">Kareem badawy</a>.</strong> All rights reserved.
       </footer>
 
-      <!-- Control Sidebar -->
-      <aside class="control-sidebar control-sidebar-dark">
-        <!-- Create the tabs -->
-        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-          <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-          <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-        </ul>
-        <!-- Tab panes -->
-        <div class="tab-content">
-          <!-- Home tab content -->
-          <div class="tab-pane" id="control-sidebar-home-tab">
-            <h3 class="control-sidebar-heading">Recent Activity</h3>
-            <ul class="control-sidebar-menu">
-              <li>
-                <a href="javascript::;">
-                  <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-                  <div class="menu-info">
-                    <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-                    <p>Will be 23 on April 24th</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript::;">
-                  <i class="menu-icon fa fa-user bg-yellow"></i>
-                  <div class="menu-info">
-                    <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-                    <p>New phone +1(800)555-1234</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript::;">
-                  <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-                  <div class="menu-info">
-                    <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-                    <p>nora@example.com</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript::;">
-                  <i class="menu-icon fa fa-file-code-o bg-green"></i>
-                  <div class="menu-info">
-                    <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-                    <p>Execution time 5 seconds</p>
-                  </div>
-                </a>
-              </li>
-            </ul><!-- /.control-sidebar-menu -->
 
-            <h3 class="control-sidebar-heading">Tasks Progress</h3>
-            <ul class="control-sidebar-menu">
-              <li>
-                <a href="javascript::;">
-                  <h4 class="control-sidebar-subheading">
-                    Custom Template Design
-                    <span class="label label-danger pull-right">70%</span>
-                  </h4>
-                  <div class="progress progress-xxs">
-                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript::;">
-                  <h4 class="control-sidebar-subheading">
-                    Update Resume
-                    <span class="label label-success pull-right">95%</span>
-                  </h4>
-                  <div class="progress progress-xxs">
-                    <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript::;">
-                  <h4 class="control-sidebar-subheading">
-                    Laravel Integration
-                    <span class="label label-warning pull-right">50%</span>
-                  </h4>
-                  <div class="progress progress-xxs">
-                    <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript::;">
-                  <h4 class="control-sidebar-subheading">
-                    Back End Framework
-                    <span class="label label-primary pull-right">68%</span>
-                  </h4>
-                  <div class="progress progress-xxs">
-                    <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-                  </div>
-                </a>
-              </li>
-            </ul><!-- /.control-sidebar-menu -->
-
-          </div><!-- /.tab-pane -->
-          <!-- Stats tab content -->
-          <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
-          <!-- Settings tab content -->
-          <div class="tab-pane" id="control-sidebar-settings-tab">
-            <form method="post">
-              <h3 class="control-sidebar-heading">General Settings</h3>
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Report panel usage
-                  <input type="checkbox" class="pull-right" checked>
-                </label>
-                <p>
-                  Some information about this general settings option
-                </p>
-              </div><!-- /.form-group -->
-
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Allow mail redirect
-                  <input type="checkbox" class="pull-right" checked>
-                </label>
-                <p>
-                  Other sets of options are available
-                </p>
-              </div><!-- /.form-group -->
-
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Expose author name in posts
-                  <input type="checkbox" class="pull-right" checked>
-                </label>
-                <p>
-                  Allow the user to show his name in blog posts
-                </p>
-              </div><!-- /.form-group -->
-
-              <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Show me as online
-                  <input type="checkbox" class="pull-right" checked>
-                </label>
-              </div><!-- /.form-group -->
-
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Turn off notifications
-                  <input type="checkbox" class="pull-right">
-                </label>
-              </div><!-- /.form-group -->
-
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Delete chat history
-                  <a href="javascript::;" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-                </label>
-              </div><!-- /.form-group -->
-            </form>
-          </div><!-- /.tab-pane -->
-        </div>
-      </aside><!-- /.control-sidebar -->
-      <!-- Add the sidebar's background. This div must be placed
-           immediately after the control sidebar -->
-      <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
 
     <!-- jQuery 2.1.4 -->

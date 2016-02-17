@@ -123,7 +123,7 @@
             </li>
             <li class="treeview">
               <a href="<?php echo site_url("Controlpanel/slider")?>">
-                <i class="fa fa-keyboard-o"style="font-size: 24px"></i> <span>&nbsp;&nbsp;Home Slider</span>
+                <i class="fa fa-sliders"style="font-size: 24px"></i> <span>&nbsp;&nbsp;Home Slider</span>
               </a>
              <!-- <ul class="treeview-menu">
                 <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>

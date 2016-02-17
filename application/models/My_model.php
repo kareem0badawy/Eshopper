@@ -15,7 +15,7 @@ class My_model extends CI_Model
 
 
 	}
-   public function add($data)
+   public function show_Slider($data)
     {
 
         $this->db->insert('config',$data);
