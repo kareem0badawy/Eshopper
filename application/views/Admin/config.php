@@ -60,8 +60,7 @@
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
           </a>
-          <div class="navbar-custom-menu">
-        
+          <div class="navbar-custom-menu">      
             </ul>
           </div>
         </nav>
@@ -71,77 +70,41 @@
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
           <!-- Sidebar user panel -->
-          <div class="user-panel">
-            <div class="pull-left image">
-              <!--<img src="<?php echo base_url('styles/dist/img/user2-160x160.jpg')?>" class="img-circle" alt="User Image">-->
-            </div>
-            <!--
-            <div class="pull-left info">
-              <p>Alexander Pierce</p>
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>-->
-          </div>
-          <!-- search form -->
-
-          <!-- /.search form -->
-          <!-- sidebar menu: : style can be found in sidebar.less -->
-
           <ul class="sidebar-menu">
            <!-- <li class="header">MAIN NAVIGATION</li>-->
-            
-           
-
           <li>
               <a href="<?php echo site_url("Home/index")?>" target="_blank">
                 <i class="fa fa-home" style="font-size: 24px"></i> <span>&nbsp;&nbsp;Home</span> <small class="label pull-right bg-green"></small>
               </a>
             </li>
 
-
             <li>
               <a href="<?php echo site_url("Controlpanel/panel")?>">
                 <i class="fa fa-dashboard" style="font-size: 24px"></i>
                 <span>&nbsp;&nbsp;Dashboard</span>
               </a>
-
             </li>
+
             <li class="treeview">
             <a href="<?php echo site_url("Controlpanel/config")?>">
               
                 <i class="fa fa-laptop"style="font-size: 24px"></i>
                 <span>&nbsp;&nbsp;App Configuration</span>
               </a>
-            
-             <!-- <ul class="treeview-menu">
-                <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-                <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-                <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-                <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-                <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-                <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
-              </ul>-->
             </li>
+
             <li class="treeview">
               <a href="<?php echo site_url("Controlpanel/slider")?>">
                 <i class="fa fa-keyboard-o"style="font-size: 24px"></i> <span>&nbsp;&nbsp;Home Slider</span>
               </a>
-             <!-- <ul class="treeview-menu">
-                <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-                <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-                <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-              </ul>-->
               </li>
+
             <li class="treeview">
               <a href="<?php echo site_url("Controlpanel/bottom_links")?>">
                 <i class="fa fa-keyboard-o"style="font-size: 24px"></i> <span>&nbsp;&nbsp;Footer Links</span>
-              </a>
-
-             <!-- <ul class="treeview-menu">
-                <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-                <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
-              </ul>-->
+              </a>            
             </li>
-           </li>
+
             <li class="treeview">
               <a href="<?php echo site_url("Controlpanel/pages")?>">
                 <i class="fa fa-keyboard-o"style="font-size: 24px"></i> <span>&nbsp;&nbsp;Pages</span>
@@ -166,55 +129,6 @@
               </ul>
             </li>
 
-            <!--EndtDashboard-->
-            <!--
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-folder"></i> <span>Examples</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-                <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-                <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-                <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-                <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-                <li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-                <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-                <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-share"></i> <span>Multilevel</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-                <li>
-                  <a href="#"><i class="fa fa-circle-o"></i> Level One <i class="fa fa-angle-left pull-right"></i></a>
-                  <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                    <li>
-                      <a href="#"><i class="fa fa-circle-o"></i> Level Two <i class="fa fa-angle-left pull-right"></i></a>
-                      <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-              </ul>
-            </li>
-            <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-            <li class="header">LABELS</li>
-            <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
-          </ul>
-        </section>
-        <!-- /.sidebar -->
       </aside>
 
       <!-- Content Wrapper. Contains page content -->
@@ -222,27 +136,20 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            App Configuration
-            
-          </h1>
-        <!-- The is  Careat  <ol class="breadcrumb">
-            <li><a href="<?php echo site_url("Home/index")?>"><i class="fa fa-home"></i> Home</a></li>
-            <li class="active">Dashboard</li>
-          </ol>-->
+            App Configuration  
+         </h1>
         </section>
 
         <!-- StartForm -->
         <form class="form-horizontal" action="" method="post">
             <fieldset>
 
-
                 <div class="clear"><br/><br/></div>
-
                 <!-- Text Title-->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">site name</label>
                     <div class="col-md-4">
-                        <input id="textinput" name="title" type="text"  class="form-control input-md">
+                        <input id="textinput" name="name" type="text"  class="form-control input-md">
                     </div>
                 </div>
                 
@@ -250,14 +157,14 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">site description</label>
                     <div class="col-md-4">
-                        <input id="textinput" name="author" type="text"  class="form-control input-md">
+                        <input id="textinput" name="description" type="text"  class="form-control input-md">
                     </div>
                 </div>
                      <!-- Text Author-->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">site keywords</label>
                     <div class="col-md-4">
-                        <input id="textinput" name="author" type="text"  class="form-control input-md">
+                        <input id="textinput" name="keywords" type="text"  class="form-control input-md">
                     </div>
                 </div>
 
@@ -265,7 +172,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">site email</label>
                     <div class="col-md-4">
-                        <input id="textinput" name="author" type="text"  class="form-control input-md">
+                        <input id="textinput" name="email" type="text"  class="form-control input-md">
                     </div>
                 </div>
 
@@ -273,21 +180,21 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">site phone</label>
                     <div class="col-md-4">
-                        <input id="textinput" name="author" type="text"  class="form-control input-md">
+                        <input id="textinput" name="phone" type="text"  class="form-control input-md">
                     </div>
                 </div>
                     <!-- Text Author-->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">site top phone</label>
                     <div class="col-md-4">
-                        <input id="textinput" name="author" type="text"  class="form-control input-md">
+                        <input id="textinput" name="topphone" type="text"  class="form-control input-md">
                     </div>
                 </div>
                      <!-- Text Author-->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">top policy title</label>
                     <div class="col-md-4">
-                        <input id="textinput" name="author" type="text"  class="form-control input-md">
+                        <input id="textinput" name="policytitle" type="text"  class="form-control input-md">
                     </div>
                 </div>
 
@@ -295,7 +202,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">top policy link</label>
                     <div class="col-md-4">
-                        <input id="textinput" name="author" type="text"  class="form-control input-md">
+                        <input id="textinput" name="policylink" type="text"  class="form-control input-md">
                     </div>
                 </div>
 
@@ -303,21 +210,21 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Return Purchases for free title</label>
                     <div class="col-md-4">
-                        <input id="textinput" name="author" type="text"  class="form-control input-md">
+                        <input id="textinput" name="freetitle" type="text"  class="form-control input-md">
                     </div>
                 </div>
                                      <!-- Text Author-->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Return Purchases for free link</label>
                     <div class="col-md-4">
-                        <input id="textinput" name="author" type="text"  class="form-control input-md">
+                        <input id="textinput" name="freelink" type="text"  class="form-control input-md">
                     </div>
                 </div>
                  <!-- File Button --> 
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="filebutton">site logo</label>
                   <div class="col-md-4">
-                    <input id="filebutton" name="filebutton" class="input-file" type="file">
+                    <input id="filebutton" name="logo" class="input-file" type="file">
                   </div>
                 </div>
 
@@ -325,14 +232,14 @@
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="filebutton">Site Favicon</label>
                   <div class="col-md-4">
-                    <input id="filebutton" name="filebutton" class="input-file" type="file">
+                    <input id="filebutton" name="favicon" class="input-file" type="file">
                   </div>
                 </div>
                 <!-- Select Active Or Un Active -->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="selectbasic">Show Blog In Home Page</label>
                     <div class="col-md-4">
-                        <select id="selectbasic" name="active" class="form-control">
+                        <select id="selectbasic" name="show" class="form-control">
                             <option value="1">Show</option>
                             <option value="0">Hide</option>
 
@@ -345,46 +252,7 @@
 
                     <label class="col-md-4 control-label" for="singlebutton"></label>
                     <div class="col-md-4">
-                        <button type="submit" id="singlebutton" name="submit" class="btn btn-primary" style="font-size: 20px">UPDATE</button>
-                    </div>
-                </div>
-                  <p>Social Media Links</p>
-                         <!-- Text Author-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">Facebook</label>
-                    <div class="col-md-4">
-                        <input id="textinput" name="author" type="text" سclass="form-control input-md">
-                    </div>
-                </div>
-
-                     <!-- Text Author-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">Twitter</label>
-                    <div class="col-md-4">
-                        <input id="textinput" name="author" type="text"  class="form-control input-md">
-                    </div>
-                </div>
-
-                     <!-- Text Author-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">Google Plus</label>
-                    <div class="col-md-4">
-                        <input id="textinput" name="author" type="text"  class="form-control input-md">
-                    </div>
-                </div>
-                      <!-- Text Author-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">Youtube</label>
-                    <div class="col-md-4">
-                        <input id="textinput" name="author" type="text" class="form-control input-md">
-                    </div>
-                </div>
-              <!-- Button Add -->
-                <div class="form-group">
-
-                    <label class="col-md-4 control-label" for="singlebutton"></label>
-                    <div class="col-md-4">
-                        <button type="submit" id="singlebutton" name="submit" class="btn btn-primary" style="font-size: 20px">UPDATE</button>
+                        <input type="submit" id="singlebutton" name="submit" class="btn btn-primary" style="font-size: 20px"></input>
                     </div>
                 </div>
             </fieldset>
