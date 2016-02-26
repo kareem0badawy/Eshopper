@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+
 
         <!-- sidebar: style can be found in sidebar.less -->
 <aside class="main-sidebar">
@@ -93,7 +88,7 @@
               </a>
                <ul class="treeview-menu">
                 <li>
-                    <a href="#"><i class="fa fa-database">&nbsp;&nbsp;All</i></a>
+                    <a href="<?php echo site_url('Controlpanel/orders');?>"><i class="fa fa-database">&nbsp;&nbsp;All</i></a>
                 </li>
 
                 <li>
@@ -106,9 +101,10 @@
                 <li>
                       <a href="#"><i class="fa fa-truck">&nbsp;&nbsp;On Delivered</i></a>
                 </li>
-                 <li>
-                      <a href="#"><i class="fa fa-reply">&nbsp;&nbsp;Delivered Back</i></a>
-                 </li>
+                   <li>
+                        <a href="#"><i class="fa fa-reply">&nbsp;&nbsp;Delivered Back</i></a>
+                   </li>
+                  
               </ul>
               </li> 
 
@@ -168,7 +164,3 @@
               </li> 
       </aside>
 
-
-
-</body>
-</html>

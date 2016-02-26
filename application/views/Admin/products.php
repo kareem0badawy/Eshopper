@@ -8,11 +8,11 @@
       <div class="content-wrapper">
         <?php $this->load->view('Admin/include/nav'); ?>
               <section class="content-header">
-          <i class="fa fa-database" style="font-size:24px">&nbsp;&nbsp;Sections</i>
+          <i class="fa fa-openid" style="font-size:24px">&nbsp;&nbsp;Products</i>
              <br>
              <br>
-               <a href="<?php echo site_url("Controlpanel/sections_create")?>" class="btn btn-primary">
-              Careate Sections
+               <a href="<?php echo site_url("Controlpanel/Products_create")?>" class="btn btn-primary">
+              Careate Product
                </a>
          
         </section>
@@ -21,7 +21,7 @@
     <table class="table table-striped table-hover">
     <thead style="background-color: #E74C3C; font-size: 15px">
       <tr class="active">
-        <td>Number</td>
+        <td>#</td>
          <td>Name</td>
         <td>icon</td>
         <td>Section</td>
@@ -49,7 +49,7 @@
           <?php echo $row->category_name?>
         </td>
         <td>
-         <?php echo $row->sort?>
+         <?php echo $row->sort_product?>
         </td>
         
       

@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
          

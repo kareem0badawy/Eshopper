@@ -181,10 +181,62 @@ class My_model extends CI_Model
   $this->db->select('*');
   $this->db->from('products');
   $this->db->join('categories','categories.category_id = products.category_id');
- // $this->db->where('categories.category_id,products.product_id');
   $query = $this->db->get();
   return $query->result();
-}
+	}
+	function productsCreate()
+	{
+		$data=array(
+			'category_id' =>$this->input->post('category_id'),
+			'product_name' =>$this->input->post('product_name'),
+			'product_description' =>$this->input->post('description'),
+			'sort_product' =>$this->input->post('sort'),
+			'status'=>$this->input->post('status')
+			);
+
+		$this->db->insert('products',$data);
+	}
+	function get_id_product($id)
+	{
+		$query=$this->db->get_where('products',array('product_id'=>$id));
+			return $query->result();
+
+	}
+	function productsEdit($id,$data)
+	{
+		$this->db->where('product_id',$id);
+		$this->db->update('products',$data);
+			return true;
+
+	}
+	function productsDelete($id)
+	{
+		$this->db->where('product_id',$id);
+		$this->db->delete('products');
+		return true;
+	}
+	function order()
+	{
+		$this->db->select('*');
+		$this->db->from('orders');
+		$this->db->join('users','users.user_id = orders.user_id' );
+		$query = $this->db->get();
+		return $query->result();
+	}
+	function get_id_order_Details($id)
+	{
+		$query=$this->db->get_where('order_details',array('orderdetails_id'=>$id));
+			return $query->result();
+
+	}
+	function order_Details()
+	{
+		$this->db->select('*');	
+		$this->db->from('users,address,orders');
+		//$this->db->join('address','users.user_id = address.user_id' );
+		$query = $this->db->get();
+		return $query->result();
+	}
 	function show_users()
 	{
 		$this->db->select('user_id,name,email,role,status');

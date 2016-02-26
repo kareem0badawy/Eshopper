@@ -227,15 +227,57 @@ class Controlpanel extends CI_Controller {
 	}
 	public function products_create()
 	{
-
+		$create=$this->input->post('create');
+		if ($create==true) 
+		{
+			$this->My_model->productsCreate();
+			return redirect('Controlpanel/products');
+		}
+		$this->load->view('Admin/products_create');
 	}
-	public function products_edit()
+	public function products_edit($id)
 	{
-
+		$data['id']=$this->uri->segment(3);
+		$edit=$this->input->post('edit');
+		if (!empty($edit)) 
+		{
+			$update=array(
+			'category_id' =>$this->input->post('category_id'),
+			'product_name' =>$this->input->post('product_name'),
+			'product_description' =>$this->input->post('description'),
+			'sort' =>$this->input->post('sort'),
+			'status'=>$this->input->post('status')
+			);
+			$this->My_model->productsEdit($id,$update);
+				return redirect('Controlpanel/products');
+		}
+		$data['result']=$this->My_model->get_id_product($id);
+		$this->load->view('Admin/products_edit',$data);
 	}
 	public function products_delete()
 	{
+		$id=$this->uri->segment(3);
+		$delete=$this->My_model->productsDelete($id);
+		if ($delete==true) 
+		{
+			return redirect('Controlpanel/products');
+		}
+		$this->load->view('Admin/products');
+	}
 
+	public function orders()
+	{	
+		$order=$this->My_model->order();
+		$data['order']=$order;
+		$this->load->view('Admin/order',$data);
+	}
+	public function orderDetails()
+	{
+		$id=$this->uri->segment(3);	
+		$data=$this->My_model->get_id_order_Details($id);
+		$orderdetails=$this->My_model->order_Details();
+		$data['orderdetails']=$orderdetails;
+		$this->load->view('Admin/order_details',$data);
 	}
 	public function users()
 	{
