@@ -12,7 +12,7 @@
           <i class="fa fa-sliders" style="font-size:24px">&nbsp;&nbsp;Pages</i>
              <br>
              <br>
-               <a href="<?php echo site_url('Controlpanel/editPage');?>" class="btn btn-danger">
+               <a href="<?php echo site_url('Controlpanel/pages_create');?>" class="btn btn-danger">
                Create Pages
                </a>
          
@@ -47,7 +47,7 @@
         <?php echo $row->link ?>
         </td>
           <td>
-              <a class="btn btn-primary" href="<?php echo site_url('Controlpanel/editPage/'.$row->id);?>"><i class="fa fa-pencil-square-o"></i></a>
+              <a class="btn btn-primary" href="<?php echo site_url('Controlpanel/pages_edit/'.$row->id);?>"><i class="fa fa-pencil-square-o"></i></a>
               <a class="btn btn-danger"  href="<?php echo site_url('Controlpanel/deletePage/'.$row->id);?>"><i class="fa fa fa-trash"></i></a>
             </td>
       </tr>

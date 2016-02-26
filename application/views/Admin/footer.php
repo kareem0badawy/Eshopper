@@ -8,7 +8,7 @@
           <i class="fa fa-sliders" style="font-size:24px">&nbsp;&nbsp;Bottom Links</i>
              <br>
              <br>
-               <a href="<?php echo site_url('Controlpanel/create_footer');?>" class="btn btn-danger">
+               <a href="<?php echo site_url('Controlpanel/footer_create');?>" class="btn btn-danger">
                Create Link
                </a>
          
@@ -31,7 +31,7 @@
       foreach ($footer as $key => $row) :?>
         
     
-          <tr>
+        <tr>
         <td>
         <?php echo ++$key ?>
         </td>
@@ -39,18 +39,22 @@
         <?php echo $row->title ?>
         </td>
         <td>
-        <?php echo $row->parent?>
+        <?php if($row->parent==1):?>
+        <span>Home</span>
+        <?php else:?>
+        <span>Test</span>          
         </td>
+      <?php endif ;?>
           <td>
           <?php if($row->status==1):?>
-         <span class='label label-success'style="font-size: 15px">Active</span>
+         <span class='label label-success'style="font-size: 10px">Active</span>
        <?php else :?>
-         <span class='label label-warning' style="font-size: 15px">Hidden</span>
+         <span class='label label-warning' style="font-size: 10px">Hidden</span>
             </td>
           <?php endif;?> 
         <td>
 
-              <a class="btn btn-primary" href="<?php echo site_url('Controlpanel/edit_footer/'.$row->id) ;?>"><i class="fa fa-pencil-square-o"></i></a>
+              <a class="btn btn-primary" href="<?php echo site_url('Controlpanel/footer_edit/'.$row->id) ;?>"><i class="fa fa-pencil-square-o"></i></a>
               <a class="btn btn-danger"  href="<?php echo site_url('Controlpanel/footer_delete/'.$row->id) ;?>"><i class="fa fa fa-trash"></i></a>
 
         </td>

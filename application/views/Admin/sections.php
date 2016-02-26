@@ -8,11 +8,11 @@
       <div class="content-wrapper">
         <?php $this->load->view('Admin/include/nav'); ?>
               <section class="content-header">
-          <i class="fa fa-sliders" style="font-size:24px">&nbsp;&nbsp;Home Slider</i>
+          <i class="fa fa-database" style="font-size:24px">&nbsp;&nbsp;Sections</i>
              <br>
              <br>
-               <a href="<?php echo site_url("Controlpanel/slider_create")?>" class="btn btn-primary">
-               Edit Slider
+               <a href="<?php echo site_url("Controlpanel/sections_create")?>" class="btn btn-primary">
+              Careate Sections
                </a>
          
         </section>
@@ -22,9 +22,9 @@
     <thead style="background-color: #E74C3C; font-size: 15px">
       <tr class="active">
         <td>Number</td>
-         <td>image</td>
-        <td>Title</td>
-        <td>Link</td>
+         <td>Name</td>
+        <td>Parent Section</td>
+        <td>Sort</td>
         <td>Status</td>
         <td>Actions</td>
 
@@ -32,7 +32,7 @@
     </thead>
     <tbody>
     <?php 
-    foreach ($slider as $key => $row):?>
+    foreach ($categories as $key => $row):?>
     
           <tr>
         <td>
@@ -40,15 +40,15 @@
         </td>
         <td style='width:150px'>
          
-          <?php//echo $row->pictures ?>
+         <?php echo $row->category_name ?>
         </td>
         <td>
-          <?php echo $row->title ?>
+          <?php echo $row->parent_section ?>
         </td>
         <td>
-          <?php echo $row->link ?>
+          <?php echo $row->sort ?>
         </td>
-      
+        
         <td>
         <?php if($row->status==1) :?>
         <span class='label label-success'style="font-size: 15px">Active</span>
@@ -57,8 +57,8 @@
        <?php endif;?>
         </td>
           <td>
-              <a class="btn btn-primary" href="<?php echo site_url('Controlpanel/slider_edit/'.$row->id) ?>"><i class="fa fa-pencil-square-o"></i></a>
-              <a class="btn btn-danger"  href="<?php echo site_url('Controlpanel/delete_slider/'.$row->id)?>"><i class="fa fa fa-trash"></i></a>
+              <a class="btn btn-primary" href="<?php echo site_url('Controlpanel/sections_edit/'.$row->category_id) ?>"><i class="fa fa-pencil-square-o"></i></a>
+              <a class="btn btn-danger"  href="<?php echo site_url('Controlpanel/sections_delete/'.$row->category_id)?>"><i class="fa fa fa-trash"></i></a>
             </td>
       </tr>
          

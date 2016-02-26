@@ -36,17 +36,18 @@ class Controlpanel extends CI_Controller {
 		$this->load->view('Admin/slider',$data);
 	}
 	//Create Slider
-	public function createSlider()
+	public function slider_create()
 	{
 		$create=$this->input->post('Create');
 		if ($create==true)
 		 {
 			$this->My_model->create_slider();
+			return redirect('Controlpanel/slider');
 		}
 
-		$this->load->view('Admin/create_slider');
+		$this->load->view('Admin/slider_create');
 	}
-	public function edit_slider($id)
+	public function slider_edit($id)
 	{
 		$data['id']=$this->uri->segment(3);
 		$edit=$this->input->post('edit');
@@ -56,6 +57,7 @@ class Controlpanel extends CI_Controller {
 				'title'=>$this->input->post('title'),
 				'content'=>$this->input->post('content'),
 				'link'=>$this->input->post('link'),
+				'status'=>$this->input->post('show'),
 			);
 			$this->My_model->edit_slider($id,$update);
 			return redirect('Controlpanel/slider');
@@ -80,7 +82,7 @@ class Controlpanel extends CI_Controller {
 		$data['footer']=$footer;
 		$this->load->view('Admin/footer',$data);
 	}
-	public function create_footer()
+	public function footer_create()
 	{
 
 		$create=$this->input->post('Create');
@@ -91,10 +93,10 @@ class Controlpanel extends CI_Controller {
 			redirect('Controlpanel/footer');
 		}
 		
-		$this->load->view('Admin/create_link');
+		$this->load->view('Admin/footer_create');
 	}
 
-	function edit_footer($id)
+	function footer_edit($id)
 	{
 		$data['id']=$this->uri->segment(3);
 		$edit=$this->input->post('edit');
@@ -104,13 +106,15 @@ class Controlpanel extends CI_Controller {
 			(
 				'title' =>$this->input->post('title') ,
 				'link' =>$this->input->post('link') ,
-				'sort' =>$this->input->post('sort') 
+				'sort' =>$this->input->post('sort'),
+				'parent'=>$this->input->post('parent'),
+				'status'=>$this->input->post('show') 
 			);
 			$this->My_model->edit_link($id,$update);
 			return redirect('Controlpanel/footer');
 		}
 		$data['result']=$this->My_model->get_id_link($id);
-		$this->load->view('Admin/edit_link',$data);
+		$this->load->view('Admin/footer_edit',$data);
 	}
 	function footer_delete()
 	{
@@ -128,7 +132,7 @@ class Controlpanel extends CI_Controller {
 		$data['pages']=$pages;
 		$this->load->view('Admin/pages',$data);
 	}
-	public function createPages()
+	public function pages_create()
 	{	
 		$create=$this->input->post('Create');
 		if ($create==true) {
@@ -136,10 +140,10 @@ class Controlpanel extends CI_Controller {
 			return redirect('Controlpanel/pages');
 		}
 
-		$this->load->view('Admin/create_pages');
+		$this->load->view('Admin/pages_create');
 	}
 
-	public function editPage($id)
+	public function pages_edit($id)
 	{
 		$data['id']=$this->uri->segment(3);
 		$edit=$this->input->post('edit');
@@ -168,5 +172,137 @@ class Controlpanel extends CI_Controller {
 		}
 
 	}
+	public function sections()
+	{
+		$categories=$this->My_model->categories();
+		$data['categories']=$categories;
+		$this->load->view('Admin/sections',$data);
+	}
+	public function sections_create()
+	{
+		$create=$this->input->post('create');
+		if($create)
+		{
+			$this->My_model->createCategories();
+			return redirect('Controlpanel/sections');
+		}
+		$this->load->view('Admin/sections_create');
+	}
+	public function sections_edit($id)
+	{
+		$data['id']=$this->uri->segment(3);
+		$edit=$this->input->post('edit');
+		if (!empty($edit))
+		{
+			$update = array(
+			'category_name' =>$this->input->post('name') ,
+			'description' =>$this->input->post('description') ,
+			'sort' =>$this->input->post('sort') ,
+			'status' =>$this->input->post('status') 
+
+				);
+			$this->My_model->editCategories($id,$update);
+				return redirect('Controlpanel/sections');
+		}
+		$data['result']=$this->My_model->get_id_category($id);
+		$this->load->view('Admin/sections_edit',$data);
+
+	}
+
+	public function sections_delete($id)
+	{
+		$data['id']=$this->uri->segment(3);
+		$delete=$this->My_model->deleteCategories($id);
+		if ($delete) 
+		{
+			return redirect('Controlpanel/sections');
+		}
+		$this->load->view('Admin/sections');
+	}
+	public function products()
+	{
+		$products=$this->My_model->products();
+		$data['products']=$products;
+		$this->load->view('Admin/products',$data);	
+	}
+	public function products_create()
+	{
+
+	}
+	public function products_edit()
+	{
+
+	}
+	public function products_delete()
+	{
+
+	}
+	public function users()
+	{
+		$users=$this->My_model->show_users();
+		$data['users']=$users;
+		$this->load->view('Admin/users',$data);
+	}
+	public function users_create()
+	{
+		$create=$this->input->post('create');
+		if ($create==true)
+		{
+			$this->My_model->create_users();
+			return redirect('Controlpanel/users');
+
+		}
+
+		$this->load->view('Admin/users_create');
+	}
+
+	public function users_edit($id)
+	{
+		$data['id']=$this->uri->segment(3);
+		$edit=$this->input->post('edit');
+		if (!empty($edit)) 
+		{
+			$update =array
+			(
+				'name' =>$this->input->post('name') , 
+				'username' =>$this->input->post('username') ,
+				'email' =>$this->input->post('email') ,
+				'password' =>$this->input->post('password') ,
+				'role' =>$this->input->post('role') ,
+				'status' =>$this->input->post('status') 
+			);
+			$this->My_model->editUsers($id,$update);
+			return redirect('Controlpanel/users');
+		}
+		$data['result']=$this->My_model->get_id_users($id);
+		$this->load->view('Admin/users_edit',$data);
+	}
+
+	public function users_delete()
+	{
+		$id=$this->uri->segment(3);
+		$delete=$this->My_model->deleteUsers($id);
+		if ($delete)
+		{
+		return redirect('Controlpanel/users');
+		}
+
+		$this->load->view('Admin/users');
+	}
+
+	public function manager()
+	{
+		$users=$this->My_model->userManager();
+		$data['users']=$users;
+		$this->load->view('Admin/users_manager',$data);
+	}
+
+	public function normal()
+	{
+		$users=$this->My_model->userNormal();
+		$data['users']=$users;
+		$this->load->view('Admin/users_normal',$data);
+	}
+
 	
 }

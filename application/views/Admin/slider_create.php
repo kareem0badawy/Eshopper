@@ -16,9 +16,7 @@
         </section>
         <br>
         <br>
-        <?php if ($result) :?>
-        	<?php foreach($result as $row): ?>
-      <form class="form-horizontal" action="<?php echo site_url("Controlpanel/slider_edit/$id");?>" method="post">
+      <form class="form-horizontal" action="<?php echo site_url('Controlpanel/slider_create');?>" method="post">
             <fieldset>
 
                 <div class="clear"><br/><br/></div>
@@ -26,7 +24,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Title</label>
                     <div class="col-md-4">
-                        <input value="<?php echo $row->title ;?>" id="textinput" name="title" type="text"  class="form-control input-md">
+                        <input id="textinput" name="title" type="text"  class="form-control input-md">
                     </div>
                 </div>
                 
@@ -34,14 +32,14 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Content</label>
                     <div class="col-md-4">
-                        <input value="<?php echo $row->content ;?>" id="textinput" name="content" type="text"  class="form-control input-md">
+                        <input id="textinput" name="content" type="text"  class="form-control input-md">
                     </div>
                 </div>
                      <!-- Text Link-->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Link</label>
                     <div class="col-md-4">
-                        <input value="<?php echo $row->link ;?>" id="textinput" name="link" type="text"  class="form-control input-md">
+                        <input id="textinput" name="link" type="text"  class="form-control input-md">
                     </div>
                 </div>
                  <!-- File Image --> 
@@ -68,15 +66,15 @@
 
                     <label class="col-md-4 control-label" for="singlebutton"></label>
                     <div class="col-md-4">
-                        <input type="submit" id="singlebutton" name="edit" class="btn btn-primary" style="font-size: 20px"></input>
+                        <input type="submit" id="singlebutton" name="Create" class="btn btn-primary" style="font-size: 20px"></input>
                     </div>
                 </div>
             </fieldset>
            </form> 
 
      
-<?php endforeach; ?>
-<?php endif; ?>
+  
+
 
     </div><!-- ./wrapper -->
 

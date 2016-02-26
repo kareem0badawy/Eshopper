@@ -18,7 +18,7 @@
         <br>
         <?php if($result):?>
           <?php foreach($result as $row):?>
-      <form class="form-horizontal" action="<?php echo site_url("Controlpanel/editPage/$id");?>" method="post">
+      <form class="form-horizontal" action="<?php echo site_url("Controlpanel/pages_edit/$id");?>" method="post">
             <fieldset>
 
                 <div class="clear"><br/><br/></div>

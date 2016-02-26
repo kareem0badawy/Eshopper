@@ -8,7 +8,7 @@
        <?php $this->load->view('Admin/include/nav'); ?>
 
               <section class="content-header">
-          <i class="fa fa-sliders" style="font-size:24px">&nbsp;&nbsp;Create New Slider</i>
+          <i class="fa fa-database" style="font-size:24px">&nbsp;&nbsp;Edit Sections</i>
              <br>
              <br>
               
@@ -16,46 +16,42 @@
         </section>
         <br>
         <br>
-        <?php if ($result) :?>
-        	<?php foreach($result as $row): ?>
-      <form class="form-horizontal" action="<?php echo site_url("Controlpanel/slider_edit/$id");?>" method="post">
+        <?php if($result):?>
+          <?php foreach ($result as $value):?>
+      <form class="form-horizontal" action="<?php echo site_url("Controlpanel/sections_edit/$id");?>" method="post">
             <fieldset>
 
                 <div class="clear"><br/><br/></div>
                 <!-- Text Title-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">Title</label>
+                    <label class="col-md-4 control-label" for="textinput">Name</label>
                     <div class="col-md-4">
-                        <input value="<?php echo $row->title ;?>" id="textinput" name="title" type="text"  class="form-control input-md">
+                        <input id="textinput" value="<?php echo $value->category_name?>" name="name" type="text"  class="form-control input-md">
                     </div>
                 </div>
                 
-                <!-- Text Content-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">Content</label>
-                    <div class="col-md-4">
-                        <input value="<?php echo $row->content ;?>" id="textinput" name="content" type="text"  class="form-control input-md">
-                    </div>
-                </div>
+ 
                      <!-- Text Link-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">Link</label>
+                    <label class="col-md-4 control-label" for="textinput">Description</label>
                     <div class="col-md-4">
-                        <input value="<?php echo $row->link ;?>" id="textinput" name="link" type="text"  class="form-control input-md">
+                        <input id="textinput" value="<?php echo $value->description?>" name="description" type="text"  class="form-control input-md">
                     </div>
                 </div>
+
                  <!-- File Image --> 
-                <div class="form-group">
-                  <label class="col-md-4 control-label" for="filebutton">Image</label>
-                  <div class="col-md-4">
-                    <input id="filebutton" name="pictures" class="input-file" type="file">
-                  </div>
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Sort</label>
+                    <div class="col-md-4">
+                        <input  name="sort" value="<?php echo $value->sort?>" type="number"  class="form-control input-md">
+                    </div>
                 </div>
+
                 <!-- Select Status -->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="selectbasic">Status</label>
                     <div class="col-md-4">
-                        <select id="selectbasic" name="show" class="form-control">
+                        <select id="selectbasic" name="status" class="form-control">
                             <option value="1">Show</option>
                             <option value="0">Hide</option>
 
@@ -75,9 +71,10 @@
            </form> 
 
      
-<?php endforeach; ?>
-<?php endif; ?>
+  
 
+<?php endforeach ;?>
+<?php endif ;?>
     </div><!-- ./wrapper -->
 
    <?php $this->load->view('Admin/include/footer'); ?>
