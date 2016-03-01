@@ -14,9 +14,10 @@
               
          
         </section>
-        <br>
-        <br>
-      <form class="form-horizontal" action="<?php echo site_url('Controlpanel/slider_create');?>" method="post">
+       <div class="alert alert-danger">
+  <p><?php echo $errors . validation_errors(); ?></p>
+  </div>
+      <form class="form-horizontal" enctype="multipart/form-data" action="<?php echo site_url('Controlpanel/slider_create');?>" method="post">
             <fieldset>
 
                 <div class="clear"><br/><br/></div>
@@ -46,7 +47,7 @@
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="filebutton">Image</label>
                   <div class="col-md-4">
-                    <input id="filebutton" name="pictures" class="input-file" type="file">
+                    <input id="filebutton" name="pic" class="form-control" type="file">
                   </div>
                 </div>
                 <!-- Select Status -->
@@ -66,13 +67,14 @@
 
                     <label class="col-md-4 control-label" for="singlebutton"></label>
                     <div class="col-md-4">
-                        <input type="submit" id="singlebutton" name="Create" class="btn btn-primary" style="font-size: 20px"></input>
+                        <input type="submit" value="Create" id="singlebutton" name="submit" class="btn btn-primary" style="font-size: 20px"></input>
                     </div>
                 </div>
             </fieldset>
            </form> 
 
      
+
   
 
 

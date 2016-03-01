@@ -18,9 +18,12 @@
             App Configuration  
          </h1>
         </section>
+        <div >
+          <p ><?php echo  $errors . validation_errors(); ?></p>
+        </div>
 
         <!-- StartForm -->
-        <form class="form-horizontal" action="<?php echo site_url('Controlpanel/config');?>" method="post">
+        <form class="form-horizontal" enctype="multipart/form-data" action="<?php echo site_url('Controlpanel/config');?>" method="post">
             <fieldset>
 
                 <div class="clear"><br/><br/></div>
@@ -103,7 +106,7 @@
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="filebutton">site logo</label>
                   <div class="col-md-4">
-                    <input id="filebutton" name="logo" class="input-file" type="file">
+                    <input id="filebutton" name="logo" class="form-control" type="file">
                   </div>
                 </div>
 
@@ -111,7 +114,7 @@
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="filebutton">Site Favicon</label>
                   <div class="col-md-4">
-                    <input id="filebutton" name="favicon" class="input-file" type="file">
+                    <input id="filebutton" name="favicon" class="form-control" type="file">
                   </div>
                 </div>
                 <!-- Select Active Or Un Active -->
@@ -131,7 +134,7 @@
 
                     <label class="col-md-4 control-label" for="singlebutton"></label>
                     <div class="col-md-4">
-                        <input type="submit" id="singlebutton" name="Update" class="btn btn-primary" style="font-size: 20px"></input>
+                        <input type="submit" id="singlebutton" value="Update" name="Update" class="btn btn-primary" style="font-size: 20px"></input>
                     </div>
                 </div>
             </fieldset>

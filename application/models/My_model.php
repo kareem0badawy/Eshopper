@@ -20,6 +20,8 @@ class My_model extends CI_Model
 				'policylink' => $this->input->post('policylink'),
 				'freetitle' => $this->input->post('freetitle'),
 				'freelink' => $this->input->post('freelink'),
+				'logo' =>$this->upload->data('file_name'),
+				'favicon' =>$this->upload->data('file_name'),
 				'status' => $this->input->post('show'),
 				);
 	$this->db->insert('config',$data);
@@ -27,22 +29,26 @@ class My_model extends CI_Model
 	}
    public function show_slider()
     {
-    	$this->db->select('id,title,link,pictures,status');
+    	$this->db->select('*');
     	$query=$this->db->get('slider');
-       return $query->result();
+        return $query->result();
     }
+    
 	public function create_slider()
 	{
+
 		$data=array
 			(
 				'title'=>$this->input->post('title'),
 				'content'=>$this->input->post('content'),
-				'pictures'=>$this->input->post('pictures'),
+				'pictures' =>$this->upload->data('file_name'),
 				'link'=>$this->input->post('link'),
 				'status'=>$this->input->post('show'),
+				
 			);
 		$this->db->insert('slider',$data);
 	}
+	
 	function get_id_slider($id)
 	{
 		$query=$this->db->get_where('slider',array('id' =>$id));
@@ -191,6 +197,7 @@ class My_model extends CI_Model
 			'product_name' =>$this->input->post('product_name'),
 			'product_description' =>$this->input->post('description'),
 			'sort_product' =>$this->input->post('sort'),
+			'product_image'  =>$this->upload->data('file_name'),
 			'status'=>$this->input->post('status')
 			);
 

@@ -15,10 +15,11 @@
          
         </section>
         <br>
+        <p><?php echo $errors?></p>
         <br>
         <?php if ($result) :?>
         	<?php foreach($result as $row): ?>
-      <form class="form-horizontal" action="<?php echo site_url("Controlpanel/slider_edit/$id");?>" method="post">
+      <form class="form-horizontal" enctype="multipart/form-data" action="<?php echo site_url("Controlpanel/slider_edit/$id");?>" method="post">
             <fieldset>
 
                 <div class="clear"><br/><br/></div>
@@ -48,7 +49,7 @@
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="filebutton">Image</label>
                   <div class="col-md-4">
-                    <input id="filebutton" name="pictures" class="input-file" type="file">
+                    <input value="<?php echo $row->pictures ;?>" name="pic" class="form-control"  type="file">
                   </div>
                 </div>
                 <!-- Select Status -->

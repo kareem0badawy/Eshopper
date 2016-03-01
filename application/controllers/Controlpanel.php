@@ -18,17 +18,25 @@ class Controlpanel extends CI_Controller {
 
 	public function config()
 	{
-
+	$config['upload_path'] = './uploads/config';
+	$config['allowed_types'] = 'gif|jpg|png';
+	$config['max_size']	= '2000';
+	$config['encrypt_name']= true;
+	$this->load->library('upload',$config);
+	$this->upload->do_upload('logo');
+	$this->upload->do_upload('favicon');
+	//$this->load->library('form_validation');	
+	//$this->form_validation->set_error_delimiters();
+	//&&$this->form_validation->run() == TRUE
 	$add=$this->input->post('Update');	
-
-	if ($add==true)
+	if ($add)
 	{
 		$this->My_model->add_config();
 	}
-
-		$this->load->view('Admin/config');
+	$data['errors']=$this->upload->display_errors();
+		$this->load->view('Admin/config',$data);
 	}
-		//Controller
+		//End config
 	public function slider()
 	{
 		$slider=$this->My_model->show_slider();
@@ -38,17 +46,33 @@ class Controlpanel extends CI_Controller {
 	//Create Slider
 	public function slider_create()
 	{
-		$create=$this->input->post('Create');
-		if ($create==true)
-		 {
+		$this->load->library('upload');
+		$this->upload->do_upload('pic');
+		$submit=$this->input->post('submit');
+		$this->load->library('form_validation');	
+		$this->form_validation->set_error_delimiters();
+		if ($submit&&$this->form_validation->run() == TRUE)
+	 	{
 			$this->My_model->create_slider();
-			return redirect('Controlpanel/slider');
+			//return redirect('Controlpanel/slider');
 		}
-
-		$this->load->view('Admin/slider_create');
+		
+		$data['errors']=$this->upload->display_errors();
+		$this->load->view('Admin/slider_create',$data);
+		
+			
+			
+	}
+	function uploadssss()
+	{
+			$this->load->library('upload');
+			$this->upload->do_upload('pic');
+			$this->load->view('Admin/slider_create');
 	}
 	public function slider_edit($id)
 	{
+		$this->load->library('upload');
+		$this->upload->do_upload('pic');
 		$data['id']=$this->uri->segment(3);
 		$edit=$this->input->post('edit');
 		if(!empty($edit))
@@ -57,11 +81,13 @@ class Controlpanel extends CI_Controller {
 				'title'=>$this->input->post('title'),
 				'content'=>$this->input->post('content'),
 				'link'=>$this->input->post('link'),
+				'pictures' =>$this->upload->data('file_name'),
 				'status'=>$this->input->post('show'),
 			);
 			$this->My_model->edit_slider($id,$update);
-			return redirect('Controlpanel/slider');
+			//return redirect('Controlpanel/slider');
 		}
+		$data['errors']=$this->upload->display_errors();
 		$data['result']=$this->My_model->get_id_slider($id);
 		$this->load->view('Admin/slider_edit',$data);
 	}
@@ -227,16 +253,29 @@ class Controlpanel extends CI_Controller {
 	}
 	public function products_create()
 	{
+	$config['upload_path'] = './uploads/products';
+	$config['allowed_types'] = 'gif|jpg|png';
+	$config['max_size']	= '2000';
+	$config['encrypt_name']= true;
+	$this->load->library('upload',$config);
+	$this->upload->do_upload('icon');
 		$create=$this->input->post('create');
 		if ($create==true) 
 		{
 			$this->My_model->productsCreate();
 			return redirect('Controlpanel/products');
 		}
-		$this->load->view('Admin/products_create');
+		$data['errors']=$this->upload->display_errors();
+		$this->load->view('Admin/products_create',$data);
 	}
 	public function products_edit($id)
-	{
+	{	
+		$config['upload_path'] = './uploads/products';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']	= '2000';
+		$config['encrypt_name']= true;
+		$this->load->library('upload',$config);
+		$this->upload->do_upload('icon');
 		$data['id']=$this->uri->segment(3);
 		$edit=$this->input->post('edit');
 		if (!empty($edit)) 
@@ -245,12 +284,15 @@ class Controlpanel extends CI_Controller {
 			'category_id' =>$this->input->post('category_id'),
 			'product_name' =>$this->input->post('product_name'),
 			'product_description' =>$this->input->post('description'),
-			'sort' =>$this->input->post('sort'),
+			'sort_product' =>$this->input->post('sort_product'),
+			'product_image' =>$this->upload->data('file_name'),
 			'status'=>$this->input->post('status')
 			);
+
 			$this->My_model->productsEdit($id,$update);
-				return redirect('Controlpanel/products');
+				//return redirect('Controlpanel/products');
 		}
+		$data['errors']=$this->upload->display_errors();
 		$data['result']=$this->My_model->get_id_product($id);
 		$this->load->view('Admin/products_edit',$data);
 	}
@@ -345,6 +387,7 @@ class Controlpanel extends CI_Controller {
 		$data['users']=$users;
 		$this->load->view('Admin/users_normal',$data);
 	}
+
 
 	
 }

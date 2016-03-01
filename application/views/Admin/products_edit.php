@@ -8,17 +8,18 @@
        <?php $this->load->view('Admin/include/nav'); ?>
 
               <section class="content-header">
-          <i class="fa fa-openid" style="font-size:24px">&nbsp;&nbsp;Create New Product</i>
+          <i class="fa fa-openid" style="font-size:24px">&nbsp;&nbsp;Edit Product</i>
              <br>
              <br>
           
          
         </section>
         <br>
+        <?php echo $errors ?>
         <br>
         <?php if($result):?>
           <?php foreach($result as $row):?>
-      <form class="form-horizontal" action="<?php echo site_url("Controlpanel/products_edit/$id");?>" method="post">
+      <form class="form-horizontal" enctype="multipart/form-data" action="<?php echo site_url("Controlpanel/products_edit/$id");?>" method="post">
             <fieldset>
                 <div class="clear"><br/><br/></div>
                 <div class="form-group">
@@ -57,10 +58,16 @@
                   <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Sort</label>
                     <div class="col-md-4">
-                        <input  name="sort" value="<?php echo $row->sort;?>" type="number"  class="form-control input-md">
+                        <input  name="sort" value="<?php echo $row->sort_product;?>" type="number"  class="form-control input-md">
                     </div>
                 </div>
-
+                  <!-- File Image --> 
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="filebutton">Image</label>
+                  <div class="col-md-4">
+                    <input  name="icon" class="form-control"  type="file">
+                  </div>
+                </div>
                 <!-- Select Status -->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="selectbasic">Status</label>
@@ -78,7 +85,7 @@
 
                     <label class="col-md-4 control-label" for="singlebutton"></label>
                     <div class="col-md-4">
-                        <input type="submit" id="singlebutton" name="edit" class="btn btn-primary" style="font-size: 20px"></input>
+                        <input type="submit" id="singlebutton" name="edit" value="Edit" class="btn btn-success" style="font-size: 20px"></input>
                     </div>
                 </div>
             </fieldset>

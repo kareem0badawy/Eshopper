@@ -16,8 +16,8 @@
         </section>
         <br>
         <br>
-
-      <form class="form-horizontal" action="<?php echo site_url('Controlpanel/products_create');?>" method="post">
+        <p><?php echo $errors?></p>
+      <form class="form-horizontal" enctype="multipart/form-data" action="<?php echo site_url('Controlpanel/products_create');?>" method="post">
             <fieldset>
                 <div class="clear"><br/><br/></div>
                 <div class="form-group">
@@ -60,7 +60,13 @@
                         <input  name="sort" type="number"  class="form-control input-md">
                     </div>
                 </div>
-
+      <!-- File Image --> 
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="filebutton">Image</label>
+                  <div class="col-md-4">
+                    <input  name="icon" class="form-control"  type="file">
+                  </div>
+                </div>
                 <!-- Select Status -->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="selectbasic">Status</label>
@@ -78,7 +84,7 @@
 
                     <label class="col-md-4 control-label" for="singlebutton"></label>
                     <div class="col-md-4">
-                        <input type="submit" id="singlebutton" name="create" class="btn btn-primary" style="font-size: 20px"></input>
+                        <input type="submit" id="singlebutton" name="create" value="Create" class="btn btn-primary" style="font-size: 20px"></input>
                     </div>
                 </div>
             </fieldset>

@@ -12,7 +12,7 @@
              <br>
              <br>
                <a href="<?php echo site_url("Controlpanel/slider_create")?>" class="btn btn-primary">
-               Edit Slider
+               Create Slider
                </a>
          
         </section>
@@ -36,12 +36,15 @@
     
           <tr>
         <td>
-        <?php echo ++$key ?>
+                <?php echo ++$key ?>
         </td>
-        <td style='width:150px'>
+        <td>
+
+         <img style="width:150px;height:80px" src="<?php echo site_url('uploads/'.$row->pictures);?>" />
          
-          <?php//echo $row->pictures ?>
         </td>
+ 
+
         <td>
           <?php echo $row->title ?>
         </td>

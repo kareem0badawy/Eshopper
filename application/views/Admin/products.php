@@ -43,7 +43,7 @@
          <?php echo $row->product_name?>
         </td>
         <td>
-          <?php echo $row->product_image?>
+         <img style="width:150px;height:80px" src="<?php echo site_url('uploads/products/'.$row->product_image);?>" />
         </td>
         <td>
           <?php echo $row->category_name?>
