@@ -154,43 +154,35 @@
 							<li data-target="#slider-carousel" data-slide-to="1"></li>
 							<li data-target="#slider-carousel" data-slide-to="2"></li>
 						</ol>
-						
-						<div class="carousel-inner">
-							<div class="item active">
-								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free E-Commerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
-								</div>
-								<div class="col-sm-6">
-									<img src="<?php echo base_url('styles/images/home/girl1.jpg" class="girl img-responsive')?>" alt="" />
-									<img src="<?php echo base_url('styles/images/home/pricing.png')?>"  class="pricing" alt="" />
-								</div>
+						xxxxxx
+							<div class="carousel-inner">
+							<?php foreach ($slideshow as $slider):
+									$i = 1; $item_class = ($i == 1) ? 'active' : '';?>
+          	                  <div class="item <?php echo $item_class ?>">
+                            	<img src="<?php echo base_url('uploads/'.$slider->pictures)?>" alt="" /> 
+                            </div>
+                            <?php endforeach ;?>  
 							</div>
+			
+						
 							<div class="item">
 								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>100% Responsive Design</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+									
+									
 								</div>
 								<div class="col-sm-6">
-									<img src="<?php echo base_url('styles/images/home/girl2.jpg')?>" class="girl img-responsive" alt="" />
-									<img src="<?php echo base_url('styles/images/home/pricing.png')?>"  class="pricing" alt="" />
+									
+
 								</div>
 							</div>
 							
 							<div class="item">
 								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free Ecommerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+									
 								</div>
 								<div class="col-sm-6">
-									<img src="<?php echo base_url('images/home/girl3.jpg')?>" class="girl img-responsive" alt="" />
-									<img src="<?php echo base_url('images/home/pricing.png')?>" class="pricing" alt="" />
+									
+
 								</div>
 							</div>
 							
@@ -351,15 +343,22 @@
 					
 					</div>
 				</div>
+			
 				
 				<div class="col-sm-9 padding-right">
+
 					<div class="features_items"><!--features_items-->
+					
 						<h2 class="title text-center">Features Items</h2>
+						
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
+
+									
 								<div class="single-products">
+								<?php foreach ($slideshow as $slider):?>
 										<div class="productinfo text-center">
-											<img src="<?php echo base_url('styles/images/home/product1.jpg')?>" alt="" />
+											<img style="width: 100px;height: 100px;" src="<?php echo base_url('uploads/products/'.$slider->product_image)?>" alt=""  /> 
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -380,7 +379,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-4">
+						<!--<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
@@ -505,8 +504,9 @@
 										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
-							</div>
+							</div>-->
 						</div>
+						<?php endforeach ;?> 
 						
 					</div><!--features_items-->
 					

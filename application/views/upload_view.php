@@ -30,3 +30,12 @@
 
 </div>
 
+<div class="carousel-inner">
+							<?php foreach ($slideshow as $slider):
+									$i = 1; $item_class = ($i == 1) ? 'active' : '';?>
+                            <div class="item <?php echo $item_class ?>">
+                            	<img src="<?php echo base_url('uploads/'.$slider->pictures)?>" alt="" /> 
+                            </div>
+                            <?php endforeach ;?>  
+							</div>
+			
